@@ -6,25 +6,30 @@ react native chonse select tab horizontal
 	yarn add react-native-chonse-select
 
 ## Usage
-	<code>
-		import { ChonseSelect } from 'react-native-chonse-select';
-
-		const data = [
-			{
-				value:'0',
-				label:'Male'
-			},
-			{
-				value:'1',
-				label:'Female'
-			}
-		]
-
-		<ChonseSelect
-			height={35}
-			style={{ marginLeft: 20, marginBottom: 10 }}
-			data={data}
-			initValue={'0'}
-			onPress={(item) => this.setState({ gender: item.value })}
-		/>
-	</code>
+	### Import library
+```javascript
+	import { ChonseSelect } from 'react-native-chonse-select';
+```
+	### Create data
+```javascript		
+	const data = [
+		{
+			value:'0',
+			label:'Male'
+		},
+		{
+			value:'1',
+			label:'Female'
+		}
+	]
+```
+	### Render components
+```javascript
+	<ChonseSelect
+		height={35}
+		style={{ marginLeft: 20, marginBottom: 10 }}
+		data={data}
+		initValue={'0'}
+		onPress={(item) => this.setState({ gender: item.value })}
+	/>
+```
