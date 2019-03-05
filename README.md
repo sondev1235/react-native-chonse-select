@@ -5,11 +5,11 @@ react native chonse select tab horizontal
 	npm install --save react-native-chonse-select
 	yarn add react-native-chonse-select
 ## Usage
-### Import library
+#### Import library
 ```javascript
 import { ChonseSelect } from 'react-native-chonse-select';
 ```
-### Create data
+#### Create data
 ```javascript		
 const data = [
 	{
@@ -22,7 +22,7 @@ const data = [
 	}
 ]
 ```
-### Render components
+#### Render components
 ```javascript
 <ChonseSelect
 	height={35}
@@ -32,3 +32,8 @@ const data = [
 	onPress={(item) => this.setState({ gender: item.value })}
 />
 ```
+## Proptypes
+| Props         |                         Description                     |     Default    |
+| ------------- |:-------------------------------------------------------:| --------------:|
+| data          | Initialize the item list                                | none|required |
+| initValue     | initialize the default data                             | none|required |
