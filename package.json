@@ -1,0 +1,22 @@
+{
+  "name": "react-native-chonse-select",
+  "version": "1.0.0",
+  "description": "react native chonse select tabs horizontal",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "chonse",
+    "select"
+  ],
+  "homepage": " https://github.com/sondev1235",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:sondev1235/react-native-chonse-select.git"
+  },
+  "author": "devson",
+  "license": "ISC"
+}
