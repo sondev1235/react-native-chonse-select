@@ -1,11 +1,12 @@
 # react-native-chonse-select
 react native chonse select tab horizontal
 
+![Atom](https://imgur.com/Ih8o5Yx.png)
+
 ## Install
 	npm install --save react-native-chonse-select
 	yarn add react-native-chonse-select
 
-	![Atom](https://imgur.com/Ih8o5Yx.png)
 ## Usage
 #### Import library
 ```javascript
