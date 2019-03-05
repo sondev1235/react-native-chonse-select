@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-export default ChonseSelect = ({
+const ChonseSelect = ({
     data,
     initValue,
     onPress,
@@ -9,61 +9,80 @@ export default ChonseSelect = ({
     color = '#333',
     borderColor = '#cdcdcd',
     style,
-    textStyle
+    textStyle,
+    label = '',
+    marginLeft = 0,
+    height,
+    labelStyle
 }) => {
     const size = Object.keys(data).length;
     return (
-        <View style={[styles.wrapRow, style]}>
-            {data.map((item, key) => {
-                if (key == 0) {
-                    return (
-                        <TouchableOpacity
-                            activeOpacity={0.9}
-                            onPress={() => onPress(item)}
-                            style={[item.value == initValue ? styles.wrapStartActive : styles.wrapStart, {
-                                borderColor: borderColor
-                            }]}>
-                            <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
-                                {item.label}
-                            </Text>
-                        </TouchableOpacity>
-                    );
-                }
-                else if (key == size - 1) {
-                    return (
-                        <TouchableOpacity
-                            activeOpacity={0.9}
-                            onPress={() => onPress(item)}
-                            style={[item.value == initValue ? styles.wrapEndActive : styles.wrapEnd, {
-                                borderColor: borderColor
-                            }]}>
-                            <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
-                                {item.label}
-                            </Text>
-                        </TouchableOpacity>
-                    );
-                } else {
-                    return (
-                        <TouchableOpacity
-                            activeOpacity={0.9}
-                            onPress={() => onPress(item)}
-                            style={[item.value == initValue ? styles.wrapActive : styles.wrap, {
-                                borderColor: borderColor
-                            }]}>
-                            <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
-                                {item.label}
-                            </Text>
-                        </TouchableOpacity>
-                    );
-                }
-            })}
+        <View style={{ marginLeft: marginLeft }}>
+            {label != '' &&
+                <Text style={[styles.label, labelStyle]}>{label}</Text>
+            }
+            <View style={[styles.wrapRow, style]}>
+                {data.map((item, key) => {
+                    if (key == 0) {
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={0.9}
+                                onPress={() => onPress(item)}
+                                style={[item.value == initValue ? styles.wrapStartActive : styles.wrapStart, {
+                                    borderColor: borderColor,
+                                    height: height
+                                }]}>
+                                <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
+                                    {item.label}
+                                </Text>
+                            </TouchableOpacity>
+                        );
+                    }
+                    else if (key == size - 1) {
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={0.9}
+                                onPress={() => onPress(item)}
+                                style={[item.value == initValue ? styles.wrapEndActive : styles.wrapEnd, {
+                                    borderColor: borderColor,
+                                    height: height
+                                }]}>
+                                <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
+                                    {item.label}
+                                </Text>
+                            </TouchableOpacity>
+                        );
+                    } else {
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={0.9}
+                                onPress={() => onPress(item)}
+                                style={[item.value == initValue ? styles.wrapActive : styles.wrap, {
+                                    borderColor: borderColor,
+                                    height: height
+                                }]}>
+                                <Text style={[styles.text, { color: item.value == initValue ? colorActive : color }, textStyle]}>
+                                    {item.label}
+                                </Text>
+                            </TouchableOpacity>
+                        );
+                    }
+                })}
+            </View>
         </View>
     )
+}
+
+module.exports = {
+    ChonseSelect: ChonseSelect
 }
 
 const styles = StyleSheet.create({
     wrapRow: {
         flexDirection: 'row',
+    },
+    label: {
+        marginBottom: 5
     },
     wrapStart: {
         borderWidth: 1,
@@ -73,6 +92,8 @@ const styles = StyleSheet.create({
         borderColor: '#383838',
         paddingVertical: 5,
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     wrapStartActive: {
         borderWidth: 1,
@@ -83,6 +104,8 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         backgroundColor: '#05a5d1',
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     wrap: {
         borderWidth: 1,
@@ -90,6 +113,8 @@ const styles = StyleSheet.create({
         borderColor: '#383838',
         paddingVertical: 5,
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     wrapActive: {
         borderWidth: 1,
@@ -98,6 +123,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#05a5d1',
         paddingVertical: 5,
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     wrapEnd: {
         borderWidth: 1,
@@ -106,6 +133,8 @@ const styles = StyleSheet.create({
         borderColor: '#383838',
         paddingVertical: 5,
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     wrapEndActive: {
         borderWidth: 1,
@@ -115,6 +144,8 @@ const styles = StyleSheet.create({
         borderColor: '#383838',
         paddingVertical: 5,
         paddingHorizontal: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     text: {
         fontSize: 13,
