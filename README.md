@@ -1,7 +1,7 @@
 # react-native-chonse-select
 react native chonse select tab horizontal
 
-![Atom](https://imgur.com/Ih8o5Yx.png)
+![Atom](https://imgur.com/bANzudq.gif)
 
 ## Install
 	npm install --save react-native-chonse-select
