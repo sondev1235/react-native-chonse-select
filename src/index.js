@@ -26,6 +26,7 @@ const ChonseSelect = ({
                     if (key == 0) {
                         return (
                             <TouchableOpacity
+                                key={key}
                                 activeOpacity={0.9}
                                 onPress={() => onPress(item)}
                                 style={[item.value == initValue ? styles.wrapStartActive : styles.wrapStart, {
@@ -41,6 +42,7 @@ const ChonseSelect = ({
                     else if (key == size - 1) {
                         return (
                             <TouchableOpacity
+                                key={key}
                                 activeOpacity={0.9}
                                 onPress={() => onPress(item)}
                                 style={[item.value == initValue ? styles.wrapEndActive : styles.wrapEnd, {
@@ -55,6 +57,7 @@ const ChonseSelect = ({
                     } else {
                         return (
                             <TouchableOpacity
+                                key={key}
                                 activeOpacity={0.9}
                                 onPress={() => onPress(item)}
                                 style={[item.value == initValue ? styles.wrapActive : styles.wrap, {
